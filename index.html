@@ -1,41 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>Fallers</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: black;
-      cursor: pointer;
-    }
-    .fullscreen-gif {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover; 
-      z-index: 9999;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn GitHub Pages Blog</title>
+    <style>
+        /* Basisstijlen & Variabelen */
+        :root {
+            --bg-color: #f9f9fb;
+            --text-color: #2d3748;
+            --accent-color: #4f46e5; /* Indigo */
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Header / Navigatie */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 40px auto 0 auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            margin-bottom: 40px;
+        }
+
+        .intro h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #1a202c;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: #718096;
+        }
+
+        /* Blog Posts Lijst */
+        .posts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .post-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .post-meta {
+            font-size: 0.85rem;
+            color: #a0aec0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .post-title {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: #1a202c;
+        }
+
+        .post-excerpt {
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        /* Mobiele optimalisatie */
+        @media (max-width: 600px) {
+            .intro h1 { font-size: 2rem; }
+            .post-title { font-size: 1.3rem; }
+            .post-card { padding: 20px; }
+        }
+    </style>
 </head>
-<body onclick="startSound()">
-  <img src="placeholder" alt="placeholder" class="fullscreen-gif">
+<body>
 
-  <audio id="beerAudio" loop>
-    <source src="placeholder" type="audio/mpeg">
-    Your browser does not support audio. Sadly, no Rick Roll for you.
-  </audio>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Mijn<span>Blog</span></a>
+        </div>
+    </header>
 
-  <script>
-    function startSound() {
-      const audio = document.getElementById('beerAudio');
-      audio.play();
-      document.body.onclick = null;
-    }
-  </script>
+    <main>
+        <section class="intro">
+            <h1>Welkom op mijn blog 👋</h1>
+            <p>Hier schrijf ik over mijn avonturen, code, en alles wat me bezighoudt. Gemaakt met HTML en gehost op GitHub Pages.</p>
+        </section>
+
+        <section class="posts-list">
+            <!-- Blog Post 1 -->
+            <article class="post-card">
+                <div class="post-meta">20 Mei 2026 • Tech</div>
+                <h2 class="post-title">Mijn allereerste blogpost!</h2>
+                <p class="post-excerpt">Vandaag ben ik begonnen met het bouwen van mijn eigen website via GitHub Pages. Het is verrassend simpel om op te zetten en supersnel geladen. In deze post leg ik uit hoe ik dit heb aangepakt...</p>
+                <a href="#" class="read-more" onclick="alert('Hier kun je later naartoe linken!'); return false;">Lees meer &rarr;</a>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="post-card">
+                <div class="post-meta">18 Mei 2026 • Lifestyle</div>
+                <h2 class="post-title">Waarom minimalistisch webdesign zo fijn is</h2>
+                <p class="post-excerpt">Geen zware frameworks, geen trackers, gewoon pure HTML en CSS. Websites horen snel en toegankelijk te zijn. Vandaag duiken we in de voordelen van 'back to basics' gaan op het internet.</p>
+                <a href="#" class="read-more" onclick="alert('Hier kun je later naartoe linken!'); return false;">Lees meer &rarr;</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Gemaakt met passie en GitHub Pages</p>
+    </footer>
+
 </body>
 </html>
